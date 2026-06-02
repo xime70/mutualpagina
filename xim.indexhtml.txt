@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutual UNI2 - CET 3</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family: 'Segoe UI', sans-serif;
+      background:#f4f4f4;
+      color:#222;
+    }
+
+    /* ===== HEADER ===== */
+
+    header{
+      background: linear-gradient(135deg,
+      #5d2cff 0%,
+      #5d2cff 35%,
+      #39b54a 65%,
+      #ff2d2d 100%);
+      color:white;
+      text-align:center;
+      padding:50px 20px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    header::before{
+      content:"";
+      position:absolute;
+      width:350px;
+      height:350px;
+      background:rgba(255,255,255,0.08);
+      border-radius:50%;
+      top:-150px;
+      left:-120px;
+    }
+
+    header::after{
+      content:"";
+      position:absolute;
+      width:300px;
+      height:300px;
+      background:rgba(255,255,255,0.08);
+      border-radius:50%;
+      bottom:-140px;
+      right:-120px;
+    }
+
+    .logo{
+      width:180px;
+      background:white;
+      padding:12px;
+      border-radius:25px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.25);
+      margin-bottom:20px;
+      position:relative;
+      z-index:2;
+    }
+
+    header h1{
+      font-size:3.2rem;
+      position:relative;
+      z-index:2;
+      font-weight:800;
+    }
+
+    header p{
+      margin-top:10px;
+      font-size:1.2rem;
+      position:relative;
+      z-index:2;
+    }
+
+    /* ===== NAV ===== */
+
+    nav{
+      background:#222;
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      padding:15px;
+      flex-wrap:wrap;
+      box-shadow:0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+      padding:8px 14px;
+      border-radius:8px;
+    }
+
+    nav a:hover{
+      background:#ff2d2d;
+    }
+
+    /* ===== CONTENEDOR ===== */
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+      padding:40px 20px;
+    }
+
+    /* ===== TARJETAS ===== */
+
+    .card{
+      background:white;
+      border-radius:22px;
+      padding:30px;
+      margin-bottom:30px;
+      box-shadow:0 8px 18px rgba(0,0,0,0.08);
+      transition:0.3s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:7px;
+      background:linear-gradient(to right,
+      #ff9900,
+      #ff2d2d,
+      #5d2cff,
+      #39b54a);
+    }
+
+    .card h2{
+      margin-bottom:20px;
+      font-size:2rem;
+      color:#5d2cff;
+    }
+
+    /* ===== TABLA ===== */
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:20px;
+      overflow:hidden;
+      border-radius:15px;
+    }
+
+    th{
+      background:linear-gradient(to right,#5d2cff,#ff2d2d);
+      color:white;
+      padding:15px;
+      font-size:1rem;
+    }
+
+    td{
+      padding:15px;
+      text-align:center;
+      border-bottom:1px solid #ddd;
+      font-weight:500;
+    }
+
+    tr:nth-child(even){
+      background:#fafafa;
+    }
+
+    tr:hover{
+      background:#f1f1f1;
+    }
+
+    .precio{
+      color:#39b54a;
+      font-weight:bold;
+      font-size:1.1rem;
+    }
+
+    /* ===== BENEFICIOS ===== */
+
+    .beneficios{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      margin-top:25px;
+    }
+
+    .mini-card{
+      color:white;
+      padding:25px;
+      border-radius:20px;
+      text-align:center;
+      box-shadow:0 6px 14px rgba(0,0,0,0.15);
+      transition:0.3s;
+    }
+
+    .mini-card:hover{
+      transform:scale(1.03);
+    }
+
+    .mini1{
+      background:linear-gradient(135deg,#5d2cff,#7c4dff);
+    }
+
+    .mini2{
+      background:linear-gradient(135deg,#39b54a,#00c853);
+    }
+
+    .mini3{
+      background:linear-gradient(135deg,#ff2d2d,#ff6b6b);
+    }
+
+    .mini-card h3{
+      margin-bottom:10px;
+      font-size:1.4rem;
+    }
+
+    /* ===== ALERTAS ===== */
+
+    .alerta{
+      margin-top:18px;
+      padding:18px;
+      border-radius:14px;
+      background:#fff5f5;
+      border-left:7px solid #ff2d2d;
+      font-weight:bold;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer{
+      background:#222;
+      color:white;
+      text-align:center;
+      padding:25px;
+      margin-top:40px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+
+    @media(max-width:700px){
+
+      header h1{
+        font-size:2.3rem;
+      }
+
+      .card h2{
+        font-size:1.6rem;
+      }
+
+      table{
+        font-size:0.9rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <!-- CAMBIÁ "logo.png" POR EL NOMBRE DE TU LOGO -->
+    <img src="logo.png" alt="Logo UNI2" class="logo">
+
+    <h1>Mutual UNI2</h1>
+    <p>Mutual Escolar CET 3</p>
+
+  </header>
+
+  <nav>
+    <a href="#fotocopias">Fotocopias</a>
+    <a href="#uniformes">Uniformes</a>
+    <a href="#convenios">Convenios</a>
+    <a href="#asociados">Asociados</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- FOTOCOPIAS -->
+
+    <section class="card" id="fotocopias">
+
+      <h2>📄 Servicio de Fotocopias</h2>
+
+      <table>
+
+        <tr>
+          <th>Tipo</th>
+          <th>Asociados</th>
+          <th>No Asociados</th>
+        </tr>
+
+        <tr>
+          <td>Fotocopia Normal</td>
+          <td class="precio">$120</td>
+          <td class="precio">$150</td>
+        </tr>
+
+        <tr>
+          <td>Fotocopia Doble Faz</td>
+          <td class="precio">$150</td>
+          <td class="precio">$200</td>
+        </tr>
+
+      </table>
+
+    </section>
+
+    <!-- UNIFORMES -->
+
+    <section class="card" id="uniformes">
+
+      <h2>👕 Uniformes Escolares</h2>
+
+      <p>
+        La Mutual UNI2 ofrece uniformes escolares para todos los alumnos del CET 3,
+        brindando calidad, comodidad y accesibilidad.
+      </p>
+
+    </section>
+
+    <!-- CONVENIOS -->
+
+    <section class="card" id="convenios">
+
+      <h2>🤝 Convenios y Beneficios</h2>
+
+      <div class="beneficios">
+
+        <div class="mini-card mini1">
+          <h3>📚 Beneficios</h3>
+          <p>Descuentos exclusivos para asociados.</p>
+        </div>
+
+        <div class="mini-card mini2">
+          <h3>🎓 Comunidad</h3>
+          <p>Apoyamos a todos los estudiantes del CET 3.</p>
+        </div>
+
+        <div class="mini-card mini3">
+          <h3>❤️ UNI2</h3>
+          <p>Trabajando juntos para mejorar la escuela.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ASOCIADOS -->
+
+    <section class="card" id="asociados">
+
+      <h2>🧾 Asociación de Alumnos</h2>
+
+      <p>
+        La cuota mensual para asociarse es de:
+      </p>
+
+      <h3 class="precio" style="margin-top:12px; font-size:2rem;">
+        $500 por mes
+      </h3>
+
+      <div class="alerta">
+        ⚠ Si después del día 10 no se paga la cuota,
+        se agregan $100 de recargo.
+      </div>
+
+      <div class="alerta">
+        ⚠ Si el pago se realiza el día 30 o más tarde,
+        el siguiente mes tendrá otros $100 acumulados.
+      </div>
+
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Mutual UNI2 - CET 3</p>
+  </footer>
+
+</body>
+</html>
