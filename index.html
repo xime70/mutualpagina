@@ -15,9 +15,10 @@
 
     body{
       font-family: 'Segoe UI', sans-serif;
-      background:#f8f8f8;
-      color:#333;
+      background:linear-gradient(135deg, #0a1a3a 0%, #0d0f1f 100%);
+      color:#fff;
       line-height:1.6;
+      min-height:100vh;
     }
 
     /* ===== HEADER ===== */
@@ -71,8 +72,11 @@
     .logo-text{
       font-size:5.5rem;
       font-weight:900;
-      color:white;
-      text-shadow:3px 3px 6px rgba(0,0,0,0.3);
+      background:linear-gradient(135deg, #ff2d2d 0%, #ff9900 25%, #5d2cff 50%, #39b54a 75%, #ff2d2d 100%);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+      text-shadow:none;
       margin-bottom:20px;
       position:relative;
       z-index:2;
@@ -133,7 +137,7 @@
       border-radius:22px;
       padding:45px;
       margin-bottom:50px;
-      box-shadow:0 6px 20px rgba(0,0,0,0.1);
+      box-shadow:0 6px 20px rgba(0,0,0,0.3);
       transition:0.3s;
       position:relative;
       overflow:hidden;
@@ -407,7 +411,7 @@
       </p>
 
       <h3 class="precio" style="margin-top:15px; font-size:2.5rem;">
-        $500 por mes
+        $800 por mes
       </h3>
 
       <p style="font-size:0.95rem; color:#666; margin-top:15px; margin-bottom:20px;">
@@ -415,13 +419,11 @@
       </p>
 
       <div class="alerta">
-        ⚠ Si después del día 10 no se paga la cuota,
-        se agregan $100 de recargo.
+        ⚠ Si pagas después del día 10: se agrega $100 de interés
       </div>
 
       <div class="alerta">
-        ⚠ Si el pago se realiza el día 30 o más tarde,
-        el siguiente mes tendrá otros $100 acumulados.
+        ⚠ Si pagas en el mes siguiente la cuota que debías: se suman $200 pesos
       </div>
 
       <h3 style="margin-top:30px; margin-bottom:20px; color:#5d2cff; font-size:1.4rem; font-weight:800;">¿Qué incluye tu membresía?</h3>
