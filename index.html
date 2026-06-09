@@ -235,6 +235,22 @@
       transform:scale(1.03);
     }
 
+    .mini-card h3,
+    .mini-card p{
+      text-shadow: 0 1px 3px rgba(0,0,0,0.35);
+    }
+
+    .descuentos-grid > div{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.35);
+      font-weight:800;
+      letter-spacing:0.2px;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
     .mini1{
       background:linear-gradient(135deg,#5d2cff,#7c4dff);
     }
@@ -260,11 +276,16 @@
       padding:20px 25px;
       border-radius:14px;
       background:#fff5f5;
+      color:#222;
       border-left:7px solid #ff2d2d;
-      font-weight:600;
+      font-weight:700;
       font-size:1rem;
       box-shadow:0 3px 10px rgba(0,0,0,0.08);
       line-height:1.7;
+    }
+
+    .alerta strong{
+      color:#111;
     }
 
     /* ===== FOOTER ===== */
@@ -375,7 +396,7 @@
 
       <h3 style="margin-top:30px; margin-bottom:20px; color:#5d2cff; font-size:1.4rem; font-weight:800;">Descuentos en:</h3>
       
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:15px; margin-top:20px;">
+      <div class="descuentos-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:15px; margin-top:20px;">
         <div style="background:linear-gradient(135deg, #5d2cff, #7c4dff); color:white; padding:20px; border-radius:15px; text-align:center; font-weight:600; box-shadow:0 4px 15px rgba(0,0,0,0.1);">🏬 Rio</div>
         <div style="background:linear-gradient(135deg, #39b54a, #00c853); color:white; padding:20px; border-radius:15px; text-align:center; font-weight:600; box-shadow:0 4px 15px rgba(0,0,0,0.1);">💊 Drogstore</div>
         <div style="background:linear-gradient(135deg, #ff2d2d, #ff6b6b); color:white; padding:20px; border-radius:15px; text-align:center; font-weight:600; box-shadow:0 4px 15px rgba(0,0,0,0.1);">🍦 Cielo</div>
@@ -391,12 +412,12 @@
         <div style="background:linear-gradient(135deg, #c2185b, #f48fb1); color:white; padding:20px; border-radius:15px; text-align:center; font-weight:600; box-shadow:0 4px 15px rgba(0,0,0,0.1);">💅 Nailss._Yas</div>
       </div>
       
-      <div class="alerta" style="margin-top:20px; background:#e3f2fd; border-left-color:#2196F3;">
-        💳 <strong>Importante:</strong> Los descuentos aplican SOLO con credencial de asociado válida y pagos al día.
+      <div class="alerta" style="margin-top:20px; background:#e3f2fd; border-left-color:#2196F3; color:#111;">
+        💳 <strong style="color:#111;">Importante:</strong> Los descuentos aplican SOLO con credencial de asociado válida y pagos al día.
         Consulta en cada comercio sobre promociones vigentes.
       </div>
 
-      <div class="alerta" style="margin-top:20px; background:#f3e5f5; border-left-color:#9c27b0;">
+      <div class="alerta" style="margin-top:20px; background:#f3e5f5; border-left-color:#9c27b0; color:#111;">
         💡 Consulta el listado completo de comercios y sus promociones vigentes en nuestras redes sociales.
       </div>
 
